@@ -6,7 +6,11 @@
  */
 int print_percent(va_list arg)
 {
-    va_arg(arg, char *);
-    putchar(37);
-    return (1);
+	char s;
+
+	s = va_arg(arg, int);
+	s = '%';
+	putchar((char)s);
+
+	return (1);
 }
