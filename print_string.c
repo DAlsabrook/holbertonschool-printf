@@ -12,6 +12,11 @@ int print_string(va_list arg)
 
 	s = va_arg(arg, char *);
 	len = strlen(s);
+	
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
 
 	for (i = 0; i < len; i++)
 	{
