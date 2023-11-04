@@ -26,7 +26,16 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			obj.func = get_form(format);
-			count += obj.func(args);
+			if (obj.func == NULL)
+			{
+				putchar('%');
+				putchar(*format);
+				count += 2;
+			}
+			else
+			{
+				count += obj.func(args);
+			}
 		}
 		else
 		{
