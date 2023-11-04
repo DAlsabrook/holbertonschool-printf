@@ -7,21 +7,20 @@
  */
 int print_string(va_list arg)
 {
-	int i, len;
+	int i;
 	char *s;
 
 	s = va_arg(arg, char *);
-	len = strlen(s);
-	
+
 	if (s == NULL)
 	{
 		s = "(null)";
 	}
 
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		putchar(s[i]);
 	}
 
-	return (len);
+	return (--i);
 }
