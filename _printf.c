@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return(98);
+		return(0);
 	}
 
 	while (*format != '\0')
@@ -25,8 +25,25 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			{
+				format--;
+				putchar(*format);
+				format++;
+				count++;
+				continue;
+			}
 			obj.func = get_form(format);
-			count += obj.func(args);
+			if (obj.func == NULL)
+			{
+				putchar('%');
+				putchar(*format);
+				count += 2;
+			}
+			else
+			{
+				count += obj.func(args);
+			}
 		}
 		else
 		{
