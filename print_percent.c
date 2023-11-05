@@ -12,5 +12,5 @@ int print_percent(va_list arg)
 	s = '%';
 	putchar((char)s);
 
-	return (-1);
+	return (1);
 }
