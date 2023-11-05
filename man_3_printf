@@ -1,0 +1,51 @@
+.TH _PRINTF 1 _printf\-0.1
+.SH NAME
+ _printf \- our version of the printf function
+
+.SH SYNOPSIS
+.B #include <stdio.h>
+int printf(const char *restrict format, ...);
+
+.SH DESCRIPTION
+.P
+.B _printf \-
+.R The printf function sends formatted output to stdout. 
+_printf() functions FORMAT string is a character string that can take a specifier to insert any data type argument in the string. 
+These arguments are placed using the percentage '%' operator before the specifier.
+
+.SS
+.IR Specifiers :
+.RS
+.BR [s] \-string
+.P
+.BR [c] \-char
+.P
+.BR [d] \-decimal
+.P
+.BR [i] \-int
+.RE
+
+.SS
+.IR Example :
+.RS
+.B INPUT
+.PP
+.RS
+_printf("Hello from cohort %d!", 22);
+.RE
+.PP
+.B OUTPUT
+.PP
+.RS
+Hello from cohort 22!
+.RE
+.RE
+
+.SS
+.IR Return :
+The return value from _printf is simply the n number of characters that were printed
+ 
+.SH AUTHOR
+.I David Alsabrook 
+.B \-
+.I Taylor Green
