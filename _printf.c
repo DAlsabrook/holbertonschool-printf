@@ -10,27 +10,29 @@ int _printf(const char *format, ...) {
 	int count = 0;
 	spec_t obj;
 	va_start(args, format);
-	if (format == NULL)
-		return (-1);
+	if (format == NULL) { return (-1);}
 	while (*format != '\0') {
 		if (*format == '%'){
 			format++;
-			if (*format == '\0')
+			if (*format == '\0') {
 				putchar('%');
 				count--;
 				continue;
+			}
 			obj.func = get_form(format);
 			if (obj.func == NULL) {
 				putchar('%');
 				putchar(*format);
 				count += 2;
 			}
-			else
+			else {
 				count += obj.func(args);
+			}
 		}
-		else
+		else {
 			putchar(*format);
 			count++;
+		}
 		format++;
 	}
 	va_end(args);
