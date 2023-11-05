@@ -4,13 +4,8 @@
  *
  * Return: 1
  */
-int print_percent(va_list arg)
+int print_percent(__attribute__((unused)) va_list arg)
 {
-	char s;
-
-	s = va_arg(arg, int);
-	s = '%';
-	putchar((char)s);
-
+	putchar('%');
 	return (1);
 }
