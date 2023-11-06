@@ -11,6 +11,7 @@ int (*get_form(const char *s))(va_list)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 
