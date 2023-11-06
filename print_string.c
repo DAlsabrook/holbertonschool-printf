@@ -22,5 +22,5 @@ int print_string(va_list arg)
 		putchar(s[i]);
 	}
 
-	return (--i);
+	return (i);
 }
