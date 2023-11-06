@@ -5,37 +5,36 @@
  *
  * Return: number of characters printed to standard output
  */
-int _printf(const char *format, ...)
-{
+int _printf(const char *format, ...) {
 	va_list args;
-	int count;
+	int count = 0;
 	spec_t obj;
-
 	va_start(args, format);
-
-	count = 0;
-
-	if (format == NULL)
-	{
-		return(98);
-	}
-
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
+	if (format == NULL) { return (-1);}
+	while (*format != '\0') {
+		if (*format == '%'){
 			format++;
+			if (*format == '\0') {
+				putchar('%');
+				count--;
+				continue;
+			}
 			obj.func = get_form(format);
-			obj.func(args);
+			if (obj.func == NULL) {
+				putchar('%');
+				putchar(*format);
+				count += 2;
+			}
+			else {
+				count += obj.func(args);
+			}
 		}
-		else
-		{
+		else {
 			putchar(*format);
 			count++;
 		}
 		format++;
 	}
 	va_end(args);
-
 	return (count);
 }
