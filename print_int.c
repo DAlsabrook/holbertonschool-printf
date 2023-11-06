@@ -10,6 +10,6 @@ int print_int(va_list arg)
 {
 	int a = va_arg(arg, int);
 
-	putchar(a);
+	putchar(a + 48);
 	return (1);
 }
