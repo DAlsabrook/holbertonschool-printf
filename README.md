@@ -15,7 +15,7 @@ Hello we are David Alsabrook and Taylor Green and this is our Printf function. W
 
  - [Savanna Davis and Cody Walenciak](https://github.com/Cody-j-w/holbertonschool-printf)
  - [David Meddaugh and Nathan Wood](https://github.com/natewood2/holbertonschool-printf/tree/main)
- - [Kevin Vang and Tsim Muaj Yang](h)
+ - [Kevin Vang and Tsim Muaj Yang](https://github.com/Jimwall0/holbertonschool-printf/tree/newbranch2)
  - [README.so](https://readme.so/editor)
 
 
