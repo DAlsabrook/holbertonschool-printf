@@ -11,16 +11,19 @@ int print_int(va_list arg)
 	int count = 0;
 	int num, abs_num, tmp, place;
 	num = va_arg(arg, int);
-	if (num == INT_MIN) {
-		putchar('-');
-		count++;
-		abs_num = INT_MAX;
-	}
-	else if (num < 0) {
-		putchar('-');
-		count++;
-		abs_num = num * -1;
-	}
+	if (num < 0) 
+	{
+                if (num == INT_MIN) 
+		{
+                  abs_num = INT_MAX;
+                }
+                else 
+		{
+                  abs_num = num * -1;
+                }
+                putchar('-');
+                count++;
+        }
 	else {
 		abs_num = num;
 	}
