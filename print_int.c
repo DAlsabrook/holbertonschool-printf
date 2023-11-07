@@ -7,7 +7,7 @@
 int print_int(va_list arg)
 {
 	int count = 0;
-	int num, swtch = 0, place;
+	int num, place;
 	unsigned int abs_num, tmp;
 	num = va_arg(arg, int);
 	if (num < 0)
@@ -15,7 +15,6 @@ int print_int(va_list arg)
 		if (num == INT_MIN)
 		{
 			abs_num = 2147483648;
-			swtch = 1;
 		}
 		putchar('-');
 		count++;
