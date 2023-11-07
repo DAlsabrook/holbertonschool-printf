@@ -25,7 +25,6 @@ Hello we are David Alsabrook and Taylor Green and this is our Printf function. W
 - [Taylor Green](https://github.com/Greentaylor27)
 
 
-## Screenshots
+## Flowchart
 
-(<img width="238" alt="image" src="https://github.com/DAlsabrook/holbertonschool-printf/assets/144153880/6804169d-c285-4ef4-8659-30b5af4ceaeb">
-)
+(<img width="238" alt="image" src="https://github.com/DAlsabrook/holbertonschool-printf/assets/144153880/9ad555de-829c-4df6-9fa8-34b5cef8a55f">)
