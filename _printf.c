@@ -22,11 +22,6 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
-			{
-				count--;
-				continue;
-			}
 			obj.func = get_form(format);
 			if (obj.func == NULL)
 			{
