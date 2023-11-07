@@ -27,5 +27,5 @@ Hello we are David Alsabrook and Taylor Green and this is our Printf function. W
 
 ## Screenshots
 
-[Flowchart](<img width="238" alt="image" src="https://github.com/DAlsabrook/holbertonschool-printf/assets/144153880/6804169d-c285-4ef4-8659-30b5af4ceaeb">
+(<img width="238" alt="image" src="https://github.com/DAlsabrook/holbertonschool-printf/assets/144153880/6804169d-c285-4ef4-8659-30b5af4ceaeb">
 )
