@@ -5,12 +5,18 @@
  *
  * Return: number of characters printed to standard output
  */
-int _printf(const char *format, ...) {
+int _printf(const char *format, ...)
+{
 	va_list args;
 	int count = 0;
 	spec_t obj;
+
 	va_start(args, format);
-	if (format == NULL) { return (-1);}
+
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	while (*format != '\0') {
 		if (*format == '%'){
 			format++;
