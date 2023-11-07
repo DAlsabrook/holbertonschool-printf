@@ -13,6 +13,7 @@ int (*get_form(const char *s))(va_list)
 		{"%", print_percent},
 		{"i", print_int},
 		{"d", print_int},
+		{"\0", print_null},
 		{NULL, NULL}
 	};
 
