@@ -17,24 +17,30 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	while (*format != '\0') {
-		if (*format == '%'){
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
 			format++;
-			if (*format == '\0') {
+			if (*format == '\0')
+			{
 				count--;
 				continue;
 			}
 			obj.func = get_form(format);
-			if (obj.func == NULL) {
+			if (obj.func == NULL)
+			{
 				putchar('%');
 				putchar(*format);
 				count += 2;
 			}
-			else {
+			else
+			{
 				count += obj.func(args);
 			}
 		}
-		else {
+		else
+		{
 			putchar(*format);
 			count++;
 		}
