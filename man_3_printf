@@ -1,51 +1,61 @@
-.TH _PRINTF 1 _printf\-0.1
+.\" Manpage for _printf
+.TH man 3 "06 November 2023" "1.0" "_printf man page"
 .SH NAME
- _printf \- our version of the printf function
+_printf \- prints strings and inserts formatted data
 
 .SH SYNOPSIS
-.B #include <stdio.h>
-int printf(const char *restrict format, ...);
+#include "main.h"
+
+int _printf(const char *format, ...);
 
 .SH DESCRIPTION
-.P
-.B _printf \-
-.R The printf function sends formatted output to stdout. 
-_printf() functions FORMAT string is a character string that can take a specifier to insert any data type argument in the string. 
-These arguments are placed using the percentage '%' operator before the specifier.
+_printf() produces a formatted output to stdout, the standard output stream;
 
-.SS
-.IR Specifiers :
-.RS
-.BR [s] \-string
-.P
-.BR [c] \-char
-.P
-.BR [d] \-decimal
-.P
-.BR [i] \-int
-.RE
+This function writes the output under the control of a format string that specifies how subsequent arguments are converted for output.
 
-.SS
-.IR Example :
-.RS
-.B INPUT
-.PP
-.RS
-_printf("Hello from cohort %d!", 22);
-.RE
-.PP
-.B OUTPUT
-.PP
-.RS
-Hello from cohort 22!
-.RE
-.RE
+.SS Format of the format string
+The format string of _printf() is a character string, composed of zero or more directives - ordinary characters (not '%') are copied unchanged to the output stream, and conversion specifications fetch a subsequent argument.
+Each conversion specification is introduced by the character %, and ends with a conversion specifier.
 
-.SS
-.IR Return :
-The return value from _printf is simply the n number of characters that were printed
- 
-.SH AUTHOR
-.I David Alsabrook 
-.B \-
-.I Taylor Green
+The arguments must correspond properly with the conversion specifier.
+The arguments are used in the order given, where each conversion specifier
+asks for the next argument in the list.
+
+.SS Conversion specifiers
+A character that specifies the type of conversion to be applied. The conversion
+specifiers and their meanings are:
+
+.B
+.IP [d] [i]
+The int argument is converted to decimal notation.
+.B
+.IP [c]
+The int argument is converted to an unsigned char, and the resulting
+character is written.
+.B
+.IP [s]
+The const char * argument is expected to be a pointer to an array of
+character type (that is, a pointer to a string). Characters from the array
+are iterated through and written to the standard output.
+.B
+.IP [%]
+A '%' is written. No argument is converted. The complete conversion
+specification is '%%'.
+.P
+.B [any non-specifier]
+In a case were a non specifier is passed, eg: "%K", the characters given will be printed along with the % character.
+
+.SH RETURN VALUE
+This function returns the number of characters printed to the standard output.
+
+If no input is given or an error is given the function will return 0.
+
+.SH EXAMPLE
+
+.P 
+Input: _printf("%s%d!/n", "Hello, from cohort ", 22);
+.P
+Output: Hello, from cohort 22!
+
+.SH AUTHORS
+David Alsabrook and Taylor Green
