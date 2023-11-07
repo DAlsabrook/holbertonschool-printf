@@ -17,6 +17,7 @@ int print_int(va_list arg)
 			abs_num = 2147483648;
 		}
 		putchar('-');
+		abs_num = num * -1;
 		count++;
 	}
 	else
