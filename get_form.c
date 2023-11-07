@@ -20,7 +20,7 @@ int (*get_form(const char *s))(va_list)
 
 	while (spec[i].id != NULL)
 	{
-		if((spec[i].id[0]) == s[0])
+		if ((spec[i].id[0]) == s[0])
 		{
 			return (spec[i].func);
 		}
