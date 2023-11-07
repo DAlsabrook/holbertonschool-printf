@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			obj.func = get_form(format);
-			if (get_form(format) == -1)
+			if (get_form(format) == (void*)-1)
 				return (-1);
 			if (obj.func == NULL)
 			{
