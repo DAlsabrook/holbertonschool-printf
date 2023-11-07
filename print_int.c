@@ -7,7 +7,7 @@
 int print_int(va_list arg)
 {
 	int count = 0;
-	int num, swtch, place;
+	int num, swtch = 0, place;
 	unsigned int abs_num, tmp;
 	num = va_arg(arg, int);
 	if (num < 0)
