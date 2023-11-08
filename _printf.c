@@ -12,11 +12,8 @@ int _printf(const char *format, ...)
 	spec_t obj;
 
 	va_start(args, format);
-
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	while (*format != '\0')
 	{
 		if (*format == '%')
